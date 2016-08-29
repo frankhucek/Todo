@@ -1,0 +1,190 @@
+
+==================== FINAL INTERFACE ====================
+2016-08-29 18:55:34.364857 UTC
+
+interface main@main:Types 7103
+  interface hash: 77b80e807b0fb1f3b165fa831d0749a9
+  ABI hash: 260739d7b94f3ecafbeae1dd0b118917
+  export-list hash: b14ee540ce69c484f0a502a318f3e572
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 68aadd3966a82cc7fd7ae0947306b815
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Types.Item{Types.Item Types.date Types.description Types.priority}
+module dependencies:
+package dependencies: base-4.8.2.0* ghc-prim-0.4.0.0
+                      integer-gmp-1.0.0.0
+orphans: base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
+family instance modules: base-4.8.2.0:Control.Applicative
+                         base-4.8.2.0:Data.Either base-4.8.2.0:Data.Monoid
+                         base-4.8.2.0:Data.Type.Equality base-4.8.2.0:GHC.Generics
+import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
+import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
+import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
+import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
+0510a71eea0a13d5f9d55cd73afb578b
+  $fShowItem :: GHC.Show.Show Types.Item
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Types.Item
+                  Types.$fShowItem_$cshowsPrec
+                  Types.$fShowItem_$cshow
+                  Types.$fShowItem_$cshowList -}
+0510a71eea0a13d5f9d55cd73afb578b
+  $fShowItem1 :: Types.Item -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (\ w :: Types.Item w1 :: GHC.Base.String ->
+                 case w of ww { Types.Item ww1 ww2 ww3 ->
+                 Types.$w$cshowsPrec 0 ww1 ww2 ww3 w1 }) -}
+265599628e2fe09ffb93049de98a7ea2
+  $fShowItem2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Item {"#) -}
+e41bfd7067df4e5078fecaf39a73613c
+  $fShowItem3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "}"#) -}
+ea5c149fff7739b38cf4cecf90c5c8c5
+  $fShowItem4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "date = "#) -}
+785e022d15bbf7ab1dacddf70d965fa7
+  $fShowItem5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "description = "#) -}
+7efb6bfff66d49225eceb9cc8b203cb5
+  $fShowItem6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# ", "#) -}
+ca540241dd92b9b0c22f37105accc793
+  $fShowItem7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "priority = "#) -}
+0510a71eea0a13d5f9d55cd73afb578b
+  $fShowItem_$cshow :: Types.Item -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U(1*U(U),1*U,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: Types.Item ->
+                 Types.$fShowItem_$cshowsPrec
+                   GHC.Show.shows18
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+0510a71eea0a13d5f9d55cd73afb578b
+  $fShowItem_$cshowList :: [Types.Item] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__ @ Types.Item Types.$fShowItem1) -}
+0510a71eea0a13d5f9d55cd73afb578b
+  $fShowItem_$cshowsPrec ::
+    GHC.Types.Int -> Types.Item -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <S,1*U(U)><S,1*U(1*U(U),1*U,1*U)><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ w :: GHC.Types.Int w1 :: Types.Item w2 :: GHC.Base.String ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { Types.Item ww3 ww4 ww5 ->
+                 Types.$w$cshowsPrec ww1 ww3 ww4 ww5 w2 } }) -}
+6aa1fc992f8c7f98285b62e4b65a4bab
+  $w$cshowsPrec ::
+    GHC.Prim.Int#
+    -> GHC.Types.Int
+    -> GHC.Base.String
+    -> GHC.Base.String
+    -> GHC.Base.String
+    -> GHC.Base.String
+  {- Arity: 5, Strictness: <L,U><L,1*U(U)><L,1*U><L,1*U><L,U>,
+     Inline: [0],
+     Unfolding: (\ ww :: GHC.Prim.Int#
+                   ww1 :: GHC.Types.Int
+                   ww2 :: GHC.Base.String
+                   ww3 :: GHC.Base.String
+                   w :: GHC.Base.String ->
+                 let {
+                   g :: GHC.Base.String -> GHC.Base.String
+                     {- Arity: 1, Strictness: <L,1*U> -}
+                   = \ x :: GHC.Base.String[OneShot] ->
+                     GHC.Base.++
+                       @ GHC.Types.Char
+                       Types.$fShowItem7
+                       (case ww1 of ww4 { GHC.Types.I# ww5 ->
+                        case GHC.Show.$wshowSignedInt
+                               0
+                               ww5
+                               (GHC.Base.++
+                                  @ GHC.Types.Char
+                                  Types.$fShowItem6
+                                  (GHC.Base.++
+                                     @ GHC.Types.Char
+                                     Types.$fShowItem5
+                                     (GHC.Types.:
+                                        @ GHC.Types.Char
+                                        GHC.Show.shows6
+                                        (GHC.Show.showLitString
+                                           ww2
+                                           (GHC.Types.:
+                                              @ GHC.Types.Char
+                                              GHC.Show.shows6
+                                              (GHC.Base.++
+                                                 @ GHC.Types.Char
+                                                 Types.$fShowItem6
+                                                 (GHC.Base.++
+                                                    @ GHC.Types.Char
+                                                    Types.$fShowItem4
+                                                    (GHC.Types.:
+                                                       @ GHC.Types.Char
+                                                       GHC.Show.shows6
+                                                       (GHC.Show.showLitString
+                                                          ww3
+                                                          (GHC.Types.:
+                                                             @ GHC.Types.Char
+                                                             GHC.Show.shows6
+                                                             (GHC.Base.++
+                                                                @ GHC.Types.Char
+                                                                Types.$fShowItem3
+                                                                x))))))))))) of ww6 { (#,#) ww7 ww8 ->
+                        GHC.Types.: @ GHC.Types.Char ww7 ww8 } })
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# ww 11) of wild {
+                   GHC.Types.False
+                   -> GHC.Base.++ @ GHC.Types.Char Types.$fShowItem2 (g w)
+                   GHC.Types.True
+                   -> GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.shows9
+                        (GHC.Base.++
+                           @ GHC.Types.Char
+                           Types.$fShowItem2
+                           (g (GHC.Types.: @ GHC.Types.Char GHC.Show.shows8 w))) }) -}
+0510a71eea0a13d5f9d55cd73afb578b
+  data Item
+    = Item {priority :: GHC.Types.Int,
+            description :: GHC.Base.String,
+            date :: GHC.Base.String}
+740f7715e8c2c88c8d1e69d7a6567594
+  date :: Types.Item -> GHC.Base.String
+  RecSel Types.Item
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LLS),1*U(A,A,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Types.Item ->
+                 case ds of wild { Types.Item ds1 ds2 ds3 -> ds3 }) -}
+cee107093fca2f28d893156a6f94fc36
+  description :: Types.Item -> GHC.Base.String
+  RecSel Types.Item
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LSL),1*U(A,1*U,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Types.Item ->
+                 case ds of wild { Types.Item ds1 ds2 ds3 -> ds2 }) -}
+4ddd271cbdb9891251b9c86a463312de
+  priority :: Types.Item -> GHC.Types.Int
+  RecSel Types.Item
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SLL),1*U(1*U(U),A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Types.Item ->
+                 case ds of wild { Types.Item ds1 ds2 ds3 -> ds1 }) -}
+instance GHC.Show.Show [Types.Item] = Types.$fShowItem
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+
