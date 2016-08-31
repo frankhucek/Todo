@@ -7,6 +7,20 @@
   (major1) == 4 && (major2) <  8 || \
   (major1) == 4 && (major2) == 8 && (minor) <= 2)
 
+/* package regex-posix-0.95.2 */
+#define VERSION_regex_posix "0.95.2"
+#define MIN_VERSION_regex_posix(major1,major2,minor) (\
+  (major1) <  0 || \
+  (major1) == 0 && (major2) <  95 || \
+  (major1) == 0 && (major2) == 95 && (minor) <= 2)
+
+/* package text-1.2.2.1 */
+#define VERSION_text "1.2.2.1"
+#define MIN_VERSION_text(major1,major2,minor) (\
+  (major1) <  1 || \
+  (major1) == 1 && (major2) <  2 || \
+  (major1) == 1 && (major2) == 2 && (minor) <= 2)
+
 /* tool gcc-6.1.1 */
 #define TOOL_VERSION_gcc "6.1.1"
 #define MIN_TOOL_VERSION_gcc(major1,major2,minor) (\
@@ -63,5 +77,5 @@
   (major1) == 2 && (major2) <  27 || \
   (major1) == 2 && (major2) == 27 && (minor) <= 0)
 
-#define CURRENT_PACKAGE_KEY "Todo_38xr77CqL3T9dow9GbLi10"
+#define CURRENT_PACKAGE_KEY "Todo_H5NOAkCzo4F1uAa0QEFD85"
 
