@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2016-08-29 18:58:40.034232 UTC
+2016-08-31 17:33:00.218431 UTC
 
 interface main@main:Main 7103
-  interface hash: 57b76988093c024e7c3f6a49df24bcb5
-  ABI hash: 0fe6bff8058804de99194655133476f5
-  export-list hash: a298b1c582c653cce7a7cd776c160980
+  interface hash: 06a141fafe46bb1f2188c3ed0f5de28c
+  ABI hash: 96f6ce60442bb60fd941c2d7c7b9b821
+  export-list hash: 1f196230d46b142ebbd063e2f9b9ee1f
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 9b47277d43009f8fab017447fd4a4b97
   sig of: Nothing
@@ -14,64 +14,89 @@ interface main@main:Main 7103
 exports:
   Main.main
 module dependencies: Types
-package dependencies: Todo-0.1.0.0@Todo_38xr77CqL3T9dow9GbLi10
-                      base-4.8.2.0* ghc-prim-0.4.0.0 integer-gmp-1.0.0.0
+package dependencies: base-4.8.2.0* ghc-prim-0.4.0.0
+                      integer-gmp-1.0.0.0
 orphans: base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
 family instance modules: base-4.8.2.0:Control.Applicative
                          base-4.8.2.0:Data.Either base-4.8.2.0:Data.Monoid
                          base-4.8.2.0:Data.Type.Equality base-4.8.2.0:GHC.Generics
-import  -/  Todo-0.1.0.0@Todo_38xr77CqL3T9dow9GbLi10:Lib 473b34be342ad91c3357cda11feeaecf
-import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
+import  -/  base-4.8.2.0:Data.Foldable 2ce969969ad5231eb40bd713f94f05ad
+import  -/  base-4.8.2.0:Data.String c2d7fed27a27fee276c179af07290091
+import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
+import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
+import  -/  base-4.8.2.0:System.Environment ba6e36000c8274703cf7786fbe8d0f6c
 import  -/  base-4.8.2.0:System.IO 0248c1e850b7ea124cf7a2e1669ebf67
+import  -/  base-4.8.2.0:Text.Read ef0ef92fb7358ae94bab089940adfd2a
 import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
-import  -/  Types 260739d7b94f3ecafbeae1dd0b118917
-  exports: b14ee540ce69c484f0a502a318f3e572
-  Item da5d729dd3eec7d55ed06a36cc48fd2b
-  date 740f7715e8c2c88c8d1e69d7a6567594
-  description cee107093fca2f28d893156a6f94fc36
-  priority 4ddd271cbdb9891251b9c86a463312de
-23bdfa5f1bef118763f19c885d04a2b2
+import  -/  Types 878e8b7ddc0fd354e3b8da7a94accdb2
+  exports: f2e4d8a6118fd275c02a53a2302cb929
+  Item 16369229c3d0e3d3bde9e50e81cc910a
+  displayItem 6d7c1468c644599b74c9c2e6b5bbdd12
+ea36c3494cc1c9d10210bd5b7db8550f
   main :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <L,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.main1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
-3f8d3fe67040950819c1b0cab4d29c3b
+8cde578d078f25645255f1d9b3160f3e
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 1, Strictness: <L,U>,
-     Unfolding: (\ eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+     Unfolding: (\ s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case System.Environment.getArgs1 s of ds1 { (#,#) ipv ipv1 ->
                  GHC.IO.Handle.Text.hPutStr2
                    GHC.IO.Handle.FD.stdout
-                   Main.main2
+                   (case Text.Read.readEither6
+                           @ Types.Item
+                           (Text.ParserCombinators.ReadP.run
+                              @ Types.Item
+                              Main.main4
+                              (case Main.main_go ipv1 (GHC.Types.[] @ GHC.Types.Char) of wild {
+                                 [] -> GHC.List.init2 @ GHC.Types.Char
+                                 : x xs -> GHC.List.init1 @ GHC.Types.Char x xs })) of wild {
+                      [] -> case Main.main3 ret_ty GHC.Base.String of {}
+                      : x ds2
+                      -> case ds2 of wild1 {
+                           [] -> Types.displayItem x
+                           : ipv2 ipv3 -> case Main.main2 ret_ty GHC.Base.String of {} } })
                    GHC.Types.True
-                   eta) -}
-6c1fe36dc8efd99d7158681be790d409
-  main2 :: GHC.Base.String
-  {- Unfolding: (Types.$w$cshowsPrec
-                   0
-                   Main.main5
-                   Main.main4
-                   Main.main3
-                   (GHC.Types.[] @ GHC.Types.Char)) -}
-9b2ff5d80d46fd3235914f018cebd975
-  main3 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "8/29/16"#) -}
-e381324a998e397fdecdca9c5c88a06e
-  main4 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "none"#) -}
-aa30356bb8008732fa8e237bfd6cd364
-  main5 :: GHC.Types.Int
-  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 1) -}
-8fb8d47c664b71c2572139712d30c8aa
-  main6 ::
+                   ipv }) -}
+0ae3a4561124e75af1bbac99bf4f5ace
+  main2 :: Types.Item
+  {- Strictness: b -}
+fabe4b0b9ea525dcdfa694f53461edb9
+  main3 :: Types.Item
+  {- Strictness: b -}
+d4588426e1eb58ef9dc26585f1fc008b
+  main4 :: Text.ParserCombinators.ReadP.P Types.Item
+  {- Unfolding: ((GHC.Read.$fReadDouble10
+                    @ Types.Item
+                    Types.$fReadItem3
+                      `cast`
+                    (Trans
+                         (<Text.ParserCombinators.ReadPrec.Prec>_R
+                          ->_R Sym (Text.ParserCombinators.ReadP.NTCo:ReadP[0]
+                                        <Types.Item>_R))
+                         (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
+                                   <Types.Item>_R)))
+                    Text.ParserCombinators.ReadPrec.minPrec)
+                   `cast`
+                 (Text.ParserCombinators.ReadP.NTCo:ReadP[0] <Types.Item>_R)
+                   @ Types.Item
+                   (Text.Read.readEither5 @ Types.Item)) -}
+5d85b51b34fe4344e03958a352370bc0
+  main5 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 1,
      Unfolding: (GHC.TopHandler.runMainIO1
                    @ ()
                    Main.main1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R))) -}
+da0e9be3f28ac400e413cdd27400cc3d
+  main_go ::
+    [[GHC.Types.Char]] -> [GHC.Types.Char] -> [GHC.Types.Char]
+  {- Arity: 2, Strictness: <S,1*U><S,1*U> -}
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:

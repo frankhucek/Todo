@@ -1,10 +1,12 @@
 module Types where
 
+-- idea: maybe think of our item type as a monad?
+
 data Item = Item {
   priority :: Int,
   description :: String,
   date :: String
-} deriving (Show)
+} deriving (Show, Read)
 
 displayItem :: Item -> String
 displayItem (Item x y z) = show x ++ "\t" ++ y ++ "\tDUE: " ++ z

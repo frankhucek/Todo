@@ -1,17 +1,20 @@
 
 ==================== FINAL INTERFACE ====================
-2016-08-29 18:55:34.364857 UTC
+2016-08-30 20:05:36.064912 UTC
 
 interface main@main:Types 7103
-  interface hash: 77b80e807b0fb1f3b165fa831d0749a9
-  ABI hash: 260739d7b94f3ecafbeae1dd0b118917
-  export-list hash: b14ee540ce69c484f0a502a318f3e572
+  interface hash: b08008f2e89f580b171608e9e6013d43
+  ABI hash: 878e8b7ddc0fd354e3b8da7a94accdb2
+  export-list hash: f2e4d8a6118fd275c02a53a2302cb929
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 68aadd3966a82cc7fd7ae0947306b815
   sig of: Nothing
   used TH splices: False
   where
 exports:
+  Types.adjustItemPriority
+  Types.displayItem
+  Types.quickItemSort
   Types.Item{Types.Item Types.date Types.description Types.priority}
 module dependencies:
 package dependencies: base-4.8.2.0* ghc-prim-0.4.0.0
@@ -21,10 +24,117 @@ family instance modules: base-4.8.2.0:Control.Applicative
                          base-4.8.2.0:Data.Either base-4.8.2.0:Data.Monoid
                          base-4.8.2.0:Data.Type.Equality base-4.8.2.0:GHC.Generics
 import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
+import  -/  base-4.8.2.0:GHC.Read b423b4506a014855edbd329b567629f3
 import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
+import  -/  base-4.8.2.0:Text.ParserCombinators.ReadPrec 2590e0e0a57a86ac7c62727f4d868dd2
+import  -/  base-4.8.2.0:Text.Read.Lex 724ca44ddd38ddc5f47a501d62736c26
 import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
-0510a71eea0a13d5f9d55cd73afb578b
+16369229c3d0e3d3bde9e50e81cc910a
+  $fReadItem :: GHC.Read.Read Types.Item
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Types.Item
+                  Types.$fReadItem_$s$dmreadsPrec
+                  Types.$fReadItem_$sreadListDefault
+                  Types.$fReadItem_$creadPrec
+                  Types.$fReadItem_$creadListPrec -}
+16369229c3d0e3d3bde9e50e81cc910a
+  $fReadItem1 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       ([Types.Item] -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, Strictness: <L,A><L,C(U)>,
+     Unfolding: InlineRule (2, True, True)
+                (\ eta :: Text.ParserCombinators.ReadPrec.Prec
+                   @ b
+                   eta1 :: [Types.Item] -> Text.ParserCombinators.ReadP.P b ->
+                 GHC.Read.$wa
+                   @ Types.Item
+                   Types.$fReadItem2
+                     `cast`
+                   (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
+                             <Types.Item>_R))
+                   @ b
+                   eta1) -}
+16369229c3d0e3d3bde9e50e81cc910a
+  $fReadItem2 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> Text.ParserCombinators.ReadP.ReadP Types.Item
+  {- Arity: 1,
+     Unfolding: (GHC.Read.$fReadDouble10
+                   @ Types.Item
+                   Types.$fReadItem3
+                     `cast`
+                   (Trans
+                        (<Text.ParserCombinators.ReadPrec.Prec>_R
+                         ->_R Sym (Text.ParserCombinators.ReadP.NTCo:ReadP[0]
+                                       <Types.Item>_R))
+                        (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
+                                  <Types.Item>_R)))) -}
+16369229c3d0e3d3bde9e50e81cc910a
+  $fReadItem3 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       (Types.Item -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, Strictness: <S,1*U(U)><L,C(U)>, Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ w :: Text.ParserCombinators.ReadPrec.Prec
+                   @ b
+                   w1 :: Types.Item -> Text.ParserCombinators.ReadP.P b ->
+                 case w of ww { GHC.Types.I# ww1 -> Types.$wa ww1 @ b w1 }) -}
+16369229c3d0e3d3bde9e50e81cc910a
+  $fReadItem_$creadListPrec ::
+    Text.ParserCombinators.ReadPrec.ReadPrec [Types.Item]
+  {- Arity: 2, Strictness: <L,A><L,C(U)>,
+     Unfolding: InlineRule (0, True, True)
+                Types.$fReadItem1
+                  `cast`
+                (Trans
+                     (<Text.ParserCombinators.ReadPrec.Prec>_R
+                      ->_R Sym (Text.ParserCombinators.ReadP.NTCo:ReadP[0]
+                                    <[Types.Item]>_R))
+                     (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
+                               <[Types.Item]>_R))) -}
+16369229c3d0e3d3bde9e50e81cc910a
+  $fReadItem_$creadPrec ::
+    Text.ParserCombinators.ReadPrec.ReadPrec Types.Item
+  {- Arity: 1,
+     Unfolding: InlineRule (0, True, True)
+                Types.$fReadItem2
+                  `cast`
+                (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
+                          <Types.Item>_R)) -}
+16369229c3d0e3d3bde9e50e81cc910a
+  $fReadItem_$s$dmreadsPrec ::
+    GHC.Types.Int -> Text.ParserCombinators.ReadP.ReadS Types.Item
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (-1, True, False)
+                (\ eta :: GHC.Types.Int ->
+                 Text.ParserCombinators.ReadPrec.readPrec_to_S
+                   @ Types.Item
+                   Types.$fReadItem_$creadPrec
+                   eta) -}
+16369229c3d0e3d3bde9e50e81cc910a
+  $fReadItem_$sreadListDefault ::
+    Text.ParserCombinators.ReadP.ReadS [Types.Item]
+  {- Arity: 1,
+     Unfolding: InlineRule (0, True, False)
+                (Text.ParserCombinators.ReadP.run
+                   @ [Types.Item]
+                   ((Types.$fReadItem_$creadListPrec
+                       `cast`
+                     (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0] <[Types.Item]>_R)
+                       GHC.Read.$fRead(,)7)
+                      `cast`
+                    (Text.ParserCombinators.ReadP.NTCo:ReadP[0] <[Types.Item]>_R)
+                      @ [Types.Item]
+                      (Text.ParserCombinators.ReadP.$fApplicativeP_$creturn
+                         @ [Types.Item]))) -}
+16369229c3d0e3d3bde9e50e81cc910a
   $fShowItem :: GHC.Show.Show Types.Item
   DFunId[0]
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -33,7 +143,7 @@ import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
                   Types.$fShowItem_$cshowsPrec
                   Types.$fShowItem_$cshow
                   Types.$fShowItem_$cshowList -}
-0510a71eea0a13d5f9d55cd73afb578b
+16369229c3d0e3d3bde9e50e81cc910a
   $fShowItem1 :: Types.Item -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (\ w :: Types.Item w1 :: GHC.Base.String ->
@@ -57,7 +167,7 @@ ea5c149fff7739b38cf4cecf90c5c8c5
 ca540241dd92b9b0c22f37105accc793
   $fShowItem7 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "priority = "#) -}
-0510a71eea0a13d5f9d55cd73afb578b
+16369229c3d0e3d3bde9e50e81cc910a
   $fShowItem_$cshow :: Types.Item -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U(1*U(U),1*U,1*U)>,
      Unfolding: InlineRule (1, True, False)
@@ -66,11 +176,11 @@ ca540241dd92b9b0c22f37105accc793
                    GHC.Show.shows18
                    x
                    (GHC.Types.[] @ GHC.Types.Char)) -}
-0510a71eea0a13d5f9d55cd73afb578b
+16369229c3d0e3d3bde9e50e81cc910a
   $fShowItem_$cshowList :: [Types.Item] -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (GHC.Show.showList__ @ Types.Item Types.$fShowItem1) -}
-0510a71eea0a13d5f9d55cd73afb578b
+16369229c3d0e3d3bde9e50e81cc910a
   $fShowItem_$cshowsPrec ::
     GHC.Types.Int -> Types.Item -> GHC.Show.ShowS
   {- Arity: 3, Strictness: <S,1*U(U)><S,1*U(1*U(U),1*U,1*U)><L,U>,
@@ -153,33 +263,90 @@ ca540241dd92b9b0c22f37105accc793
                            @ GHC.Types.Char
                            Types.$fShowItem2
                            (g (GHC.Types.: @ GHC.Types.Char GHC.Show.shows8 w))) }) -}
-0510a71eea0a13d5f9d55cd73afb578b
+16369229c3d0e3d3bde9e50e81cc910a
+  $wa ::
+    GHC.Prim.Int#
+    -> forall b.
+       (Types.Item -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, Strictness: <L,U><L,C(U)>, Inline: [0] -}
+69ff29b8dbab8d59594a252ed16fde3e
+  $wdisplayItem ::
+    GHC.Prim.Int#
+    -> GHC.Base.String -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,U><L,1*U><L,U>,
+     Inline: [0],
+     Unfolding: (\ ww :: GHC.Prim.Int#
+                   ww1 :: GHC.Base.String
+                   ww2 :: GHC.Base.String ->
+                 case GHC.Show.$wshowSignedInt
+                        0
+                        ww
+                        (GHC.Types.[] @ GHC.Types.Char) of ww4 { (#,#) ww5 ww6 ->
+                 GHC.Base.++
+                   @ GHC.Types.Char
+                   (GHC.Types.: @ GHC.Types.Char ww5 ww6)
+                   (GHC.CString.unpackAppendCString#
+                      "\t"#
+                      (GHC.Base.++
+                         @ GHC.Types.Char
+                         ww1
+                         (GHC.CString.unpackAppendCString# "\tDUE: "# ww2))) }) -}
+16369229c3d0e3d3bde9e50e81cc910a
   data Item
     = Item {priority :: GHC.Types.Int,
             description :: GHC.Base.String,
             date :: GHC.Base.String}
-740f7715e8c2c88c8d1e69d7a6567594
+2e75186be400ccbcbb57a055e6145617
+  adjustItemPriority :: Types.Item -> GHC.Types.Int -> Types.Item
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U(A,U,U)><L,U>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ ds :: Types.Item newPriority :: GHC.Types.Int ->
+                 case ds of wild { Types.Item ds1 x y ->
+                 Types.Item newPriority x y }) -}
+e6dced0560a238ee35463e3c912cbefd
   date :: Types.Item -> GHC.Base.String
   RecSel Types.Item
   {- Arity: 1, HasNoCafRefs, Strictness: <S(LLS),1*U(A,A,1*U)>,
      Unfolding: InlineRule (1, True, False)
                 (\ ds :: Types.Item ->
                  case ds of wild { Types.Item ds1 ds2 ds3 -> ds3 }) -}
-cee107093fca2f28d893156a6f94fc36
+22ab265faabb8c714262f2fd88b385c3
   description :: Types.Item -> GHC.Base.String
   RecSel Types.Item
   {- Arity: 1, HasNoCafRefs, Strictness: <S(LSL),1*U(A,1*U,A)>,
      Unfolding: InlineRule (1, True, False)
                 (\ ds :: Types.Item ->
                  case ds of wild { Types.Item ds1 ds2 ds3 -> ds2 }) -}
-4ddd271cbdb9891251b9c86a463312de
+6d7c1468c644599b74c9c2e6b5bbdd12
+  displayItem :: Types.Item -> GHC.Base.String
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SLL),1*U(1*U(U),1*U,U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ w :: Types.Item ->
+                 case w of ww { Types.Item ww1 ww2 ww3 ->
+                 case ww1 of ww4 { GHC.Types.I# ww5 ->
+                 Types.$wdisplayItem ww5 ww2 ww3 } }) -}
+2852e43cc9371a218ed7c68d9ee2b91d
   priority :: Types.Item -> GHC.Types.Int
   RecSel Types.Item
   {- Arity: 1, HasNoCafRefs, Strictness: <S(SLL),1*U(1*U(U),A,A)>,
      Unfolding: InlineRule (1, True, False)
                 (\ ds :: Types.Item ->
                  case ds of wild { Types.Item ds1 ds2 ds3 -> ds1 }) -}
+b44d8271b35734c3c6d9ec22e53941d3
+  quickItemSort :: [Types.Item] -> [Types.Item]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
+instance GHC.Read.Read [Types.Item] = Types.$fReadItem
 instance GHC.Show.Show [Types.Item] = Types.$fShowItem
+"SPEC/Types $dmreadsPrec @ Item" [ALWAYS] forall $dRead :: GHC.Read.Read
+                                                             Types.Item
+  GHC.Read.$dmreadsPrec @ Types.Item $dRead
+  = Types.$fReadItem_$s$dmreadsPrec
+"SPEC/Types readListDefault @ Item" [ALWAYS] forall $dRead :: GHC.Read.Read
+                                                                Types.Item
+  GHC.Read.readListDefault @ Types.Item $dRead
+  = Types.$fReadItem_$sreadListDefault
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:
