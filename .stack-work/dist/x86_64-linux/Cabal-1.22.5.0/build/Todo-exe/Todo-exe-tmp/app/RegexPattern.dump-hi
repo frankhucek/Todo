@@ -1,0 +1,73 @@
+
+==================== FINAL INTERFACE ====================
+2016-08-31 19:17:47.085811 UTC
+
+interface main@main:RegexPattern 7103
+  interface hash: 85cda803a9e0d2081406f0462a5768f3
+  ABI hash: ab2a32030812e47af8f679be8ea1093e
+  export-list hash: bd688786c051b5c8677cb66ab2858f41
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: caa29add5eb71991a524cd4fc9fd5d5a
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  RegexPattern.patternToItem
+  RegexPattern.regexPattern
+module dependencies: Types
+package dependencies: array-0.5.1.0@array_67iodizgJQIIxYVTp4emlA
+                      base-4.8.2.0* binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi
+                      bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6
+                      containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU
+                      deepseq-1.4.1.1@deeps_6vMKxt5sPFR0XsbRWvvq59 ghc-prim-0.4.0.0
+                      integer-gmp-1.0.0.0 text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne*
+orphans: base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
+         binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi:Data.Binary.Generic
+         bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6:Data.ByteString.Builder
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Show
+family instance modules: base-4.8.2.0:Control.Applicative
+                         base-4.8.2.0:Data.Either base-4.8.2.0:Data.Functor.Identity
+                         base-4.8.2.0:Data.Monoid base-4.8.2.0:Data.Type.Equality
+                         base-4.8.2.0:Data.Void base-4.8.2.0:GHC.Exts
+                         base-4.8.2.0:GHC.Generics
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntMap.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntSet.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Map.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Sequence
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Set.Base
+                         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text
+import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
+import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
+import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
+import  -/  base-4.8.2.0:Text.Read ef0ef92fb7358ae94bab089940adfd2a
+import  -/  Types 878e8b7ddc0fd354e3b8da7a94accdb2
+  exports: f2e4d8a6118fd275c02a53a2302cb929
+  Item 7dabbf24b1c0cf6d192f2cb6dcc2ca74
+  Item 16369229c3d0e3d3bde9e50e81cc910a
+import  -/  text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text 677c532e2dd56476a11a0a8a53880ce7
+import  -/  text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Show 081cc243e944015e37c793c3b0ebfefd
+9565324cb3f10899f38324325d10e3df
+  $wpatternToItem ::
+    GHC.Base.String
+    -> (# GHC.Types.Int, GHC.Base.String, GHC.Base.String #)
+  {- Arity: 1, Strictness: <L,1*U>, Inline: [0] -}
+ecfd9b1438235b992c443bcc3d5b6add
+  patternToItem :: GHC.Base.String -> Types.Item
+  {- Arity: 1, Strictness: <L,1*U>m, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ w :: GHC.Base.String ->
+                 case RegexPattern.$wpatternToItem w of ww { (#,,#) ww1 ww2 ww3 ->
+                 Types.Item ww1 ww2 ww3 }) -}
+dc0b073c4d644b9e00cda69e70960732
+  regexPattern :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "[0-9]+(:)[A-Za-z0-9 ]+(:)[0-9]{1,2}/[0-9]{1,2}/[0-9]{2,4}"#) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+
