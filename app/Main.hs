@@ -21,6 +21,8 @@ Remove from Todo.txt, but place entry in backup file todo.backup.txt
 *# VIEW #*
 Default. Print in readable format.
 
+TODO: (pun not intended) Priority set for listed items, Completely edit an item.
+
 Written by Frank Hucek
 -}
 
@@ -85,10 +87,15 @@ removeFromFile x = do
 
 viewTodoList :: [String] -> IO ()
 viewTodoList _ = do
+  (_, Just hout, _, _) <- createProcess (proc "cal" []) {std_out = CreatePipe}
+  cal <- hGetContents hout
+  putStrLn cal
+  hClose hout
   putStrLn $ "\tPRIOR.\tDESCRIPTION"
   file <- readFile todoFile
   let items = fmap (displayItem . patternToItem) $ lines file -- [String]
   printTodoList items
+  --putStrLn cal
 
 printTodoList = printTodo 1
 printTodo :: Int -> [String] -> IO ()
