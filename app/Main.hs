@@ -1,4 +1,3 @@
-{-# LANGUAGE BangPatterns #-}
 module Main where
 
 import           Types
@@ -26,11 +25,16 @@ Written by Frank Hucek
 -}
 
 todoFile :: String
-todoFile = "./Todo.txt"
+todoFile = "/home/frank/bin_storage/Todo.txt"
 
 main :: IO ()
 main = do
-  (option:xs) <- getArgs
+  x <- getArgs
+  mainThrow x
+
+mainThrow :: [String] -> IO ()
+mainThrow [] = viewTodoList []
+mainThrow (option:xs) = do
   case option of
    "add" -> addItem xs
    "remove" -> removeItem xs

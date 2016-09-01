@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2016-09-01 15:55:11.235179 UTC
+2016-09-01 16:10:38.525663 UTC
 
 interface main@main:Main 7103
-  interface hash: 2812597158b5b7055a25fc4bc453c399
-  ABI hash: 5db7dd83ecd537d73d7babd1b454f6c2
-  export-list hash: 848d3d2f2bfba23bac405d6cccd62429
+  interface hash: b1f677e3db70200c4af5577d92ca5360
+  ABI hash: 9ee7aaaf86a0ffb84f491049cd07cca3
+  export-list hash: 5502c2f4a84dee2edcd1011433ec4ddf
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 9f3f54208ef98c3cdf86dd48a7915247
   sig of: Nothing
@@ -15,6 +15,7 @@ exports:
   Main.addItem
   Main.argOp
   Main.main
+  Main.mainThrow
   Main.printTodo
   Main.printTodoList
   Main.readMaybe
@@ -79,14 +80,14 @@ import  -/  process-1.2.3.0@proce_52AgREEfSrnJLlkGV9YZZJ:System.Process 8f5da958
 import  -/  regex-posix-0.95.2@regex_ClFHQvfj6rtJ1Pxo4OAy89:Text.Regex.Posix fa14a969e0d89af615bc3ee63c912f06
 import  -/  regex-posix-0.95.2@regex_ClFHQvfj6rtJ1Pxo4OAy89:Text.Regex.Posix.Wrap c14dca50bea9909bd11f2fae9cef1d46
 import  -/  text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text 677c532e2dd56476a11a0a8a53880ce7
-2186111207410cf4a14e0e40d0467dfb
+6591c5a515a74ff754e3eeb5878dfc8b
   addItem :: [GHC.Base.String] -> GHC.Types.IO ()
   {- Arity: 2, Strictness: <L,1*U><L,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.addItem1
                   `cast`
                 (<[GHC.Base.String]>_R ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
-686e30177c9cc961a8f82d3d75924c6b
+ec54f2de339671d74fd215024ba3b2a2
   addItem1 ::
     [GHC.Base.String]
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -164,7 +165,7 @@ import  -/  text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text 677c532e2dd56476a
 7c6d346ce72b56565993088e47c86325
   addItem2 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "\n"#) -}
-aae4d13118084a557f57da61210de423
+af592503f85445ae705657139acf6a2c
   addItem3 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld,
@@ -205,71 +206,75 @@ cb9a7f2db9df0af7aab64b40d385c377
   argOp_go ::
     [[GHC.Types.Char]] -> [GHC.Types.Char] -> [GHC.Types.Char]
   {- Arity: 2, Strictness: <S,1*U><S,1*U> -}
-8f27fec47914e6c29fde7ae0cb68287b
+e35441803f27a31199eae32dc6222306
   main :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <L,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.main1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
-dec0968c510acb67bab408f7a2a0d0a6
+8c04ccc38cabea645ca38061b45ded7e
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 1, Strictness: <L,U>,
-     Unfolding: (\ s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+     Unfolding: InlineRule (1, True, False)
+                (\ s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
                  case System.Environment.getArgs1 s of ds1 { (#,#) ipv ipv1 ->
-                 case ipv1 of wild {
-                   []
-                   -> GHC.Prim.raiseIO#
-                        @ GHC.Exception.SomeException
-                        @ ()
-                        Main.main10
-                        ipv
-                   : option xs
-                   -> case GHC.Base.eqString option Main.main9 of wild1 {
-                        GHC.Types.False
-                        -> case GHC.Base.eqString option Main.main8 of wild2 {
-                             GHC.Types.False
-                             -> case GHC.IO.Handle.Text.hPutStr2
-                                       GHC.IO.Handle.FD.stdout
-                                       Main.main7
-                                       GHC.Types.True
-                                       ipv of ds2 { (#,#) ipv2 ipv3 ->
-                                Main.main3 ipv2 }
-                             GHC.Types.True -> Main.main2 xs ipv }
-                        GHC.Types.True -> Main.addItem1 xs ipv } } }) -}
-2b9f93a57879b2255dfe297111dfbde1
-  main10 :: GHC.Exception.SomeException
-  {- Unfolding: (GHC.IO.Exception.$fExceptionIOException_$ctoException
-                   Main.main11) -}
-bc0f267b4c6741cb6bb1f3c886246d53
-  main11 :: GHC.IO.Exception.IOException
-  {- Unfolding: (GHC.IO.Exception.IOError
-                   (GHC.Base.Nothing @ GHC.IO.Handle.Types.Handle)
-                   GHC.IO.Exception.UserError
-                   (GHC.Types.[] @ GHC.Types.Char)
-                   Main.main12
-                   (GHC.Base.Nothing @ Foreign.C.Types.CInt)
-                   (GHC.Base.Nothing @ GHC.IO.FilePath)) -}
-c928fa7c26e6274a7bde9c423cd69990
-  main12 :: [GHC.Types.Char]
+                 Main.main2 ipv1 ipv }) -}
+1ce8af04335c6d6c2b08a77af7559c29
+  main10 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
-                   "Pattern match failure in do expression at app/Main.hs:33:3-13"#) -}
-17a409dcb9611c94a68109d5bec75a96
-  main13 ::
+                   "\tPRIOR.\tDESCRIPTION"#) -}
+b25aad0f00c7255313ce80b981352138
+  main11 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 1,
      Unfolding: (GHC.TopHandler.runMainIO1
                    @ ()
                    Main.main1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R))) -}
-f6a9d36c2752d32c9f6e86aa0485df36
+feaaa60d525f4300a5f94049fe65f0df
   main2 ::
     [GHC.Base.String]
     -> GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
-  {- Arity: 2, Strictness: <S,1*U><L,U> -}
-16cd4e4be6ee9efadb1843667f0d78a3
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: (\ ds1 :: [GHC.Base.String]
+                   eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case ds1 of wild {
+                   []
+                   -> case GHC.IO.Handle.Text.hPutStr2
+                             GHC.IO.Handle.FD.stdout
+                             Main.main10
+                             GHC.Types.True
+                             eta of ds2 { (#,#) ipv ipv1 ->
+                      Main.main6 ipv }
+                   : option xs
+                   -> case GHC.Base.eqString option Main.main5 of wild1 {
+                        GHC.Types.False
+                        -> case GHC.Base.eqString option Main.main4 of wild2 {
+                             GHC.Types.False
+                             -> case GHC.IO.Handle.Text.hPutStr2
+                                       GHC.IO.Handle.FD.stdout
+                                       Main.main10
+                                       GHC.Types.True
+                                       eta of ds2 { (#,#) ipv ipv1 ->
+                                Main.main6 ipv }
+                             GHC.Types.True -> Main.main3 xs eta }
+                        GHC.Types.True -> Main.addItem1 xs eta } }) -}
+b11294444c255a2295e731e15d8180ca
   main3 ::
+    [GHC.Base.String]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <S,1*U><L,U> -}
+08cbd61f448367aec055349022a1754e
+  main4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "remove"#) -}
+7b498dc648510244f309c75fb12a8065
+  main5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "add"#) -}
+13fbad429ad97d0c69b3391399b09a3f
+  main6 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 1, Strictness: <L,U>,
@@ -281,63 +286,60 @@ f6a9d36c2752d32c9f6e86aa0485df36
                  case GHC.IO.Handle.Text.hGetContents1
                         ipv1
                         ipv of ds2 { (#,#) ipv2 ipv3 ->
-                 Main.main6
-                   Main.main5
+                 Main.main9
+                   Main.main8
                    (GHC.Base.map
                       @ [GHC.Types.Char]
                       @ [GHC.Types.Char]
-                      Main.main4
+                      Main.main7
                       (Data.OldList.lines ipv3))
                    ipv2 } }) -}
-4ca05585287f086bd56a573f9007cf71
-  main4 :: GHC.Base.String -> GHC.Base.String
+7c4180e954018e8d0920eddaae96ed80
+  main7 :: GHC.Base.String -> GHC.Base.String
   {- Arity: 1,
      Unfolding: (\ x :: GHC.Base.String ->
                  case RegexPattern.$wpatternToItem x of ww { (#,,#) ww1 ww2 ww3 ->
                  case ww1 of ww4 { GHC.Types.I# ww5 ->
                  Types.$wdisplayItem ww5 ww2 ww3 } }) -}
-9b9ed4a07f5b23d21b0bab98336c0f80
-  main5 :: GHC.Types.Int
+1d5cfdab840b22ce8492b0fb4cba7024
+  main8 :: GHC.Types.Int
   {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 1) -}
-751e6c861c4c3a80b41bafce7d7d2572
-  main6 ::
+5beb34f66012e1ab078c0b835cde482a
+  main9 ::
     GHC.Types.Int
     -> [GHC.Base.String]
     -> GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 3, Strictness: <L,U(U)><S,1*U><L,U> -}
-9cad165bd61afede3fd484c7223cb8a1
-  main7 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "\tPRIOR.\tDESCRIPTION"#) -}
-23bc4a45a1106e384a2168f65af4cf75
-  main8 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "remove"#) -}
-ca287af7363f3a1552cca49233bcfee3
-  main9 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "add"#) -}
-c8752f07ee16d777a62eddbeec7afced
+ec478028de3af8ec2b179e8c61228b62
+  mainThrow :: [GHC.Base.String] -> GHC.Types.IO ()
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.main2
+                  `cast`
+                (<[GHC.Base.String]>_R ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
+c957a588f6ce5b1864f2439f8c5dbcbb
   printTodo :: GHC.Types.Int -> [GHC.Base.String] -> GHC.Types.IO ()
   {- Arity: 3, Strictness: <L,U(U)><S,1*U><L,U>,
      Unfolding: InlineRule (0, True, True)
-                Main.main6
+                Main.main9
                   `cast`
                 (<GHC.Types.Int>_R
                  ->_R <[GHC.Base.String]>_R
                  ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
-8b3d302400d29217b165164d0891a384
+a4530bc951f71e4e22a5dd324839b6da
   printTodoList :: [GHC.Base.String] -> GHC.Types.IO ()
   {- Arity: 2,
      Unfolding: InlineRule (0, True, True)
                 Main.printTodoList1
                   `cast`
                 (<[GHC.Base.String]>_R ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
-b713acbfe03ba68fb83537b0717ddc9c
+28508ab3845c36299dbc58888416080c
   printTodoList1 ::
     [GHC.Base.String]
     -> GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
-  {- Arity: 2, Unfolding: (Main.main6 Main.main5) -}
+  {- Arity: 2, Unfolding: (Main.main9 Main.main8) -}
 2161f82cd1e680b72c0ddefed6963725
   readMaybe :: GHC.Read.Read a => GHC.Base.String -> GHC.Base.Maybe a
   {- Arity: 2, HasNoCafRefs,
@@ -366,14 +368,14 @@ fef91b648badad6d16a3ff23c94200b5
                    @ GHC.Types.Int
                    (Text.ParserCombinators.ReadP.$fApplicativeP_$creturn
                       @ GHC.Types.Int)) -}
-f4582756e76bde6cc0835cfff1ddc69d
+bfaa03a8aaca0d2e34dc1a630fae8ac9
   removeFromFile :: GHC.Types.Int -> GHC.Types.IO ()
   {- Arity: 2, Strictness: <L,1*U(U)><L,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.removeFromFile1
                   `cast`
                 (<GHC.Types.Int>_R ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
-0d25326f9b5f4703f434773fff9d8c37
+d96ef2e15fe9425aeb72aafe697a7606
   removeFromFile1 ::
     GHC.Types.Int
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -461,20 +463,20 @@ f4582756e76bde6cc0835cfff1ddc69d
                         System.Process.Internals.Inherit
                         ipv10 of ds7 { (#,#) ipv12 ipv13 ->
                  (# ipv12, GHC.Tuple.() #) } } } } } } }) -}
-404333f5dc9e83e55e6f241a61c80d7c
+2299924847dd1cd62bcadf2c7cc5956a
   removeFromFile2 :: System.Process.Internals.CmdSpec
   {- Strictness: m2,
      Unfolding: (System.Process.Internals.RawCommand
                    Main.removeFromFile6
                    Main.removeFromFile3) -}
-4319c005ad157ac7539d90f0edde2d7d
+97f0c354757153edc0a4898781d341eb
   removeFromFile3 :: [GHC.Base.String]
   {- Strictness: m2,
      Unfolding: (GHC.Types.:
                    @ GHC.Base.String
                    Main.removeFromFile5
                    Main.removeFromFile4) -}
-92a2518a316363de687faefd45ef0953
+4127760181b910d70b03ddcefe54842f
   removeFromFile4 :: [GHC.Base.String]
   {- Strictness: m2,
      Unfolding: (GHC.Types.:
@@ -487,7 +489,7 @@ f4582756e76bde6cc0835cfff1ddc69d
 1d70b4158be94f124cf7bf82909b1a8b
   removeFromFile6 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "mv"#) -}
-5dd5db64bc3cc04dc472b8ba4015c7a0
+393289562281d198de60a6c434c94757
   removeFromFile7 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld,
@@ -496,7 +498,7 @@ f4582756e76bde6cc0835cfff1ddc69d
      Unfolding: (GHC.IO.Handle.FD.openFile1
                    Main.removeFromFile8
                    GHC.IO.IOMode.WriteMode) -}
-45691dd4ebabf0d506a18c43fb25d0d0
+08d9f77091bdfaf724c3733cd12332d9
   removeFromFile8 :: [GHC.Types.Char]
   {- Unfolding: (GHC.Base.++
                    @ GHC.Types.Char
@@ -505,24 +507,25 @@ f4582756e76bde6cc0835cfff1ddc69d
 7b20b9922c39e13ea52db089ed163998
   removeFromFile9 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# ".new"#) -}
-a837b498beea681dac1c0cf37830302b
+ed12bc71a4db58dfd11c85eac56f4445
   removeItem :: [GHC.Base.String] -> GHC.Types.IO ()
   {- Arity: 2, Strictness: <S,1*U><L,U>,
      Unfolding: InlineRule (0, True, True)
-                Main.main2
+                Main.main3
                   `cast`
                 (<[GHC.Base.String]>_R ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
-16f3996e20fc0bcfa8f7d5b78eaad6b7
+d5e5a3386960ac8f15febad86307af0c
   todoFile :: GHC.Base.String
-  {- Unfolding: (GHC.CString.unpackCString# "./Todo.txt"#) -}
-08be3461c66df8ea5334ab7a8e08d764
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "/home/frank/bin_storage/Todo.txt"#) -}
+549eb7a0c895e2a96834447e1dfed9bf
   viewTodoList :: [GHC.Base.String] -> GHC.Types.IO ()
   {- Arity: 2, Strictness: <L,A>,
      Unfolding: InlineRule (0, True, True)
                 Main.viewTodoList1
                   `cast`
                 (<[GHC.Base.String]>_R ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
-15f469fe66078afb540eefb4d87079f9
+8217af9dad43e13bcf83453cb04f909f
   viewTodoList1 ::
     [GHC.Base.String]
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -532,7 +535,7 @@ a837b498beea681dac1c0cf37830302b
                 (\ ds1 :: [GHC.Base.String]
                    eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
                  Main.viewTodoList2 eta) -}
-8fe804d82e035c2b2af5a7d677a7f859
+36034656a4a0a794f7330f57e0ca408c
   viewTodoList2 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -540,8 +543,8 @@ a837b498beea681dac1c0cf37830302b
      Unfolding: InlineRule (1, True, False)
                 (\ s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
                  case Main.viewTodoList3 s of ds1 { (#,#) ipv ipv1 ->
-                 Main.main3 ipv }) -}
-f41f21ab18f57d416976e3a14caf4b39
+                 Main.main6 ipv }) -}
+544f147f0b5759b0ae8dacf638039197
   viewTodoList3 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -549,7 +552,7 @@ f41f21ab18f57d416976e3a14caf4b39
      Unfolding: (\ eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
                  GHC.IO.Handle.Text.hPutStr2
                    GHC.IO.Handle.FD.stdout
-                   Main.main7
+                   Main.main10
                    GHC.Types.True
                    eta) -}
 vectorised variables:
