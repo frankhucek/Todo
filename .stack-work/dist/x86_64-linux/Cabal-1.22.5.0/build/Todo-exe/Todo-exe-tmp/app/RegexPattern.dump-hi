@@ -1,17 +1,18 @@
 
 ==================== FINAL INTERFACE ====================
-2016-08-31 19:17:47.085811 UTC
+2016-09-01 14:52:56.54225 UTC
 
 interface main@main:RegexPattern 7103
-  interface hash: 85cda803a9e0d2081406f0462a5768f3
-  ABI hash: ab2a32030812e47af8f679be8ea1093e
-  export-list hash: bd688786c051b5c8677cb66ab2858f41
+  interface hash: 093caf3a943fda3b5119d6dd0da17b5f
+  ABI hash: 080ea16126457466d02c0f0c0176c56c
+  export-list hash: 5ec278cf5d8c5b81f1a3bb1375ad5773
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: caa29add5eb71991a524cd4fc9fd5d5a
   sig of: Nothing
   used TH splices: False
   where
 exports:
+  RegexPattern.itemToPattern
   RegexPattern.patternToItem
   RegexPattern.regexPattern
 module dependencies: Types
@@ -39,6 +40,7 @@ family instance modules: base-4.8.2.0:Control.Applicative
                          text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text
 import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
 import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
+import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
 import  -/  base-4.8.2.0:Text.Read ef0ef92fb7358ae94bab089940adfd2a
 import  -/  Types 878e8b7ddc0fd354e3b8da7a94accdb2
@@ -47,11 +49,42 @@ import  -/  Types 878e8b7ddc0fd354e3b8da7a94accdb2
   Item 16369229c3d0e3d3bde9e50e81cc910a
 import  -/  text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text 677c532e2dd56476a11a0a8a53880ce7
 import  -/  text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Show 081cc243e944015e37c793c3b0ebfefd
+2c9b570de0c7510516e717c085ddb92d
+  $witemToPattern ::
+    GHC.Prim.Int#
+    -> GHC.Base.String -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,U><L,1*U><L,U>,
+     Inline: [0],
+     Unfolding: (\ ww :: GHC.Prim.Int#
+                   ww1 :: GHC.Base.String
+                   ww2 :: GHC.Base.String ->
+                 case GHC.Show.$wshowSignedInt
+                        0
+                        ww
+                        (GHC.Types.[] @ GHC.Types.Char) of ww4 { (#,#) ww5 ww6 ->
+                 GHC.Base.++
+                   @ GHC.Types.Char
+                   (GHC.Types.: @ GHC.Types.Char ww5 ww6)
+                   (GHC.CString.unpackAppendCString#
+                      ":"#
+                      (GHC.Base.++
+                         @ GHC.Types.Char
+                         ww1
+                         (GHC.CString.unpackAppendCString# ":"# ww2))) }) -}
 9565324cb3f10899f38324325d10e3df
   $wpatternToItem ::
     GHC.Base.String
     -> (# GHC.Types.Int, GHC.Base.String, GHC.Base.String #)
   {- Arity: 1, Strictness: <L,1*U>, Inline: [0] -}
+cf03ec73162b165309a8ae63e8697e13
+  itemToPattern :: Types.Item -> GHC.Base.String
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SLL),1*U(1*U(U),1*U,U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ w :: Types.Item ->
+                 case w of ww { Types.Item ww1 ww2 ww3 ->
+                 case ww1 of ww4 { GHC.Types.I# ww5 ->
+                 RegexPattern.$witemToPattern ww5 ww2 ww3 } }) -}
 ecfd9b1438235b992c443bcc3d5b6add
   patternToItem :: GHC.Base.String -> Types.Item
   {- Arity: 1, Strictness: <L,1*U>m, Inline: INLINE[0],
@@ -59,10 +92,10 @@ ecfd9b1438235b992c443bcc3d5b6add
                 (\ w :: GHC.Base.String ->
                  case RegexPattern.$wpatternToItem w of ww { (#,,#) ww1 ww2 ww3 ->
                  Types.Item ww1 ww2 ww3 }) -}
-dc0b073c4d644b9e00cda69e70960732
+e54a19db7cc458217170a2f08356418b
   regexPattern :: GHC.Base.String
   {- Unfolding: (GHC.CString.unpackCString#
-                   "[0-9]+(:)[A-Za-z0-9 ]+(:)[0-9]{1,2}/[0-9]{1,2}/[0-9]{2,4}"#) -}
+                   "[0-9]+(:)[A-Za-z0-9 .!\"#$%()]+(:)[0-9]{1,2}/[0-9]{1,2}/[0-9]{2,4}"#) -}
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:

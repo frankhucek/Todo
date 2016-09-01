@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2016-08-31 18:56:45.844997 UTC
+2016-09-01 15:48:23.447941 UTC
 
-interface Todo_H5NOAkCzo4F1uAa0QEFD85:Lib 7103
-  interface hash: 94a24bd96dd4015b7569151a0f299b91
-  ABI hash: 2858ca7a6451a61557b56413a1353bd3
-  export-list hash: cbff8319fb759190b91c00087bf040df
+interface Todo_IpKjDdVbKs8326hsSNRKrL:Lib 7103
+  interface hash: 0e0d68331303ffb340eb4f9e3fbf55a5
+  ABI hash: bfe783cb396fe510ccdee37ce9ce3d2a
+  export-list hash: 0c2e00f9bc0197def682f404cfc759cf
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 962af636f8e927040c7daa9c21457292
   sig of: Nothing
@@ -23,12 +23,12 @@ family instance modules: base-4.8.2.0:Control.Applicative
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
 import  -/  base-4.8.2.0:System.IO 0248c1e850b7ea124cf7a2e1669ebf67
 import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
-e5f7bc510314970b146ad5ebab7442e9
+571b80dc69f835757e115c660b086f75
   someFunc :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <L,U>,
      Unfolding: InlineRule (0, True, True)
                 Lib.someFunc1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
-27c031bad9e211426b5bdbb1573ea42c
+7f4bff985025e8e2742d789c1dd304b2
   someFunc1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -39,7 +39,7 @@ e5f7bc510314970b146ad5ebab7442e9
                    Lib.someFunc2
                    GHC.Types.True
                    eta) -}
-5cbf0a2848a0080c4e0c16f34a017ea5
+5b377adadca332d8fa4eeea7e5b1265a
   someFunc2 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "someFunc"#) -}
 vectorised variables:

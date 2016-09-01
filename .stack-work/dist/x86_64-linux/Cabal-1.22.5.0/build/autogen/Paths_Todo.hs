@@ -16,11 +16,11 @@ version :: Version
 version = Version [0,1,0,0] []
 bindir, libdir, datadir, libexecdir, sysconfdir :: FilePath
 
-bindir     = "/home/frank/Code/Haskell/Todo/.stack-work/install/x86_64-linux/lts-6.14/7.10.3/bin"
-libdir     = "/home/frank/Code/Haskell/Todo/.stack-work/install/x86_64-linux/lts-6.14/7.10.3/lib/x86_64-linux-ghc-7.10.3/Todo-0.1.0.0-H5NOAkCzo4F1uAa0QEFD85"
-datadir    = "/home/frank/Code/Haskell/Todo/.stack-work/install/x86_64-linux/lts-6.14/7.10.3/share/x86_64-linux-ghc-7.10.3/Todo-0.1.0.0"
-libexecdir = "/home/frank/Code/Haskell/Todo/.stack-work/install/x86_64-linux/lts-6.14/7.10.3/libexec"
-sysconfdir = "/home/frank/Code/Haskell/Todo/.stack-work/install/x86_64-linux/lts-6.14/7.10.3/etc"
+bindir     = "/home/frank/CODE/Todo/.stack-work/install/x86_64-linux/lts-6.14/7.10.3/bin"
+libdir     = "/home/frank/CODE/Todo/.stack-work/install/x86_64-linux/lts-6.14/7.10.3/lib/x86_64-linux-ghc-7.10.3/Todo-0.1.0.0-IpKjDdVbKs8326hsSNRKrL"
+datadir    = "/home/frank/CODE/Todo/.stack-work/install/x86_64-linux/lts-6.14/7.10.3/share/x86_64-linux-ghc-7.10.3/Todo-0.1.0.0"
+libexecdir = "/home/frank/CODE/Todo/.stack-work/install/x86_64-linux/lts-6.14/7.10.3/libexec"
+sysconfdir = "/home/frank/CODE/Todo/.stack-work/install/x86_64-linux/lts-6.14/7.10.3/etc"
 
 getBinDir, getLibDir, getDataDir, getLibexecDir, getSysconfDir :: IO FilePath
 getBinDir = catchIO (getEnv "Todo_bindir") (\_ -> return bindir)

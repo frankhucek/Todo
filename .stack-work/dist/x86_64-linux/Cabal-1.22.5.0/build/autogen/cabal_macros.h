@@ -7,6 +7,13 @@
   (major1) == 4 && (major2) <  8 || \
   (major1) == 4 && (major2) == 8 && (minor) <= 2)
 
+/* package process-1.2.3.0 */
+#define VERSION_process "1.2.3.0"
+#define MIN_VERSION_process(major1,major2,minor) (\
+  (major1) <  1 || \
+  (major1) == 1 && (major2) <  2 || \
+  (major1) == 1 && (major2) == 2 && (minor) <= 3)
+
 /* package regex-posix-0.95.2 */
 #define VERSION_regex_posix "0.95.2"
 #define MIN_VERSION_regex_posix(major1,major2,minor) (\
@@ -20,6 +27,13 @@
   (major1) <  1 || \
   (major1) == 1 && (major2) <  2 || \
   (major1) == 1 && (major2) == 2 && (minor) <= 2)
+
+/* tool c2hs-0.25.2 */
+#define TOOL_VERSION_c2hs "0.25.2"
+#define MIN_TOOL_VERSION_c2hs(major1,major2,minor) (\
+  (major1) <  0 || \
+  (major1) == 0 && (major2) <  25 || \
+  (major1) == 0 && (major2) == 25 && (minor) <= 2)
 
 /* tool gcc-6.1.1 */
 #define TOOL_VERSION_gcc "6.1.1"
@@ -77,5 +91,5 @@
   (major1) == 2 && (major2) <  27 || \
   (major1) == 2 && (major2) == 27 && (minor) <= 0)
 
-#define CURRENT_PACKAGE_KEY "Todo_H5NOAkCzo4F1uAa0QEFD85"
+#define CURRENT_PACKAGE_KEY "Todo_IpKjDdVbKs8326hsSNRKrL"
 
