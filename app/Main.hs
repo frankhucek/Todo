@@ -36,3 +36,7 @@ argOp xs = init $ foldl (++) "" $ map (++ " ") xs
         -- concatenate list of strings into 1 string
         -- take new string - last character b/c last char is a whitespace
         -- input can now be checked against regular expression
+
+
+-- READ, WRITE, APPEND operations on file
+-- File and user IO uses regex pattern. convert to Item type in program
