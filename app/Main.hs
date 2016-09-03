@@ -80,8 +80,9 @@ removeFromFile x = do
       (a, b) = splitAt x xs
       itemList = (init a) ++ b
       items = unlines itemList
-  writeFile (todoFile ++ ".new") items
-  _ <- createProcess (proc "mv" ["Todo.txt.new", todoFile]) -- SUPER jank, temporary fix to lazy eval here
+      newTodoFile = todoFile ++ ".new"
+  writeFile newTodoFile items
+  _ <- createProcess (proc "mv" [newTodoFile, todoFile]) -- SUPER jank, temporary fix to lazy eval here
   return ()
   -- removes indices even when typing in the wrong number
 
